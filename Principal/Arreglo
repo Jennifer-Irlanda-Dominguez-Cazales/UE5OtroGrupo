@@ -1,0 +1,42 @@
+
+package ue5otrogrupo;
+import java.util.Random;
+/*
+ * @author Dominguez Cazales Jennifer
+ */
+public class UE5OtroGrupo {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Random r = new Random();
+        int resta=0;
+    int[][] num = new  int[4][5];   
+            //Lenar el arreglo
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 5; j++) {
+                num[i][j]=r.nextInt(21);    
+                }
+            }
+            //Mostrar el arreglo
+            System.out.println("El resultado de la resta por filas es:");
+                   for (int x=0; x < num.length; x++) {
+                     System.out.print("|");
+                             for (int y=0; y < num[x].length; y++) {
+                             System.out.print (num[x][y]);
+                                    if (y!=num[x].length-1){
+                                        System.out.print("\t");
+                                    }
+                                    if (y==0) {
+                                     resta=num[x][y];
+                                    }else{
+                                     resta=resta-num[x][y];   
+                                    }
+                                    
+                             }
+                     System.out.print("|");System.out.println("  "+num[x][0]+" menos todos los numeros que quedan en la fila es: "+resta);
+                   }
+    }
+}
+    
+
